@@ -48,6 +48,8 @@ Just for the sake of convenience, this section will go through some of works men
 > that outputs the confidence in the classification of all messages and request true labels of some of the messages that have the smallest confidence
 * Dynamic Personalization: Segal(2007): it considers a heterogeneous setting for every users and takes into account for a global filter and a personal filter. 
 
+## References 
+Guzella, Thiago S., and Walmir M. Caminhas. “A Review of Machine Learning Approaches to Spam Filtering.” _Expert Systems with Applications_, vol. 36, no. 7, 2009, pp. 10206–10222., doi:10.1016/j.eswa.2009.02.037. 
 
 ## Notes and Take away
 This is just a start for me. I will update what I read, what I think and this will be what I write. Because I am just a beginner and I will limited to my schedule, deadlines and potential unseen events, stopping to update is the least thing I want. Thus I sometimes divide things up and keep updating.  
