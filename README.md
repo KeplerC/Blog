@@ -5,6 +5,7 @@ I will update what I read, what I think and this will be what I write. Because I
 A list of my works: 
 
 
-| Index       | Name           | Date  |
-| ------------- |:-------------:| -----:|
-| 1      | Machine Learning in Spam Filtering | Aug 23, 24 |
+| Index         | Name                                 | Date       |
+| ------------- |:------------------------------------:| ----------:|
+| 1             | Machine Learning in Spam Filtering   | Aug 23, 24 |
+| 2             | A study of Backpropagation Algorithm | Aug 25     |
