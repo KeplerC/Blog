@@ -9,4 +9,4 @@ A list of my works:
 | ------------- |:------------------------------------: | ----------:|
 | 1             | Machine Learning in Spam Filtering    | Aug 23, 24 |
 | 2             | A study of Backpropagation Algorithm  | Aug 25     |
-| 3             | Machine Learning x Intrusion Detection| Aug 26     |
+| 3             | Machine Learning x Intrusion Detection| Aug 26，27 |
