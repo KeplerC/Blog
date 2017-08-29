@@ -28,7 +28,7 @@ adding extra features might be overfitting, while adding little will be underfit
 * Reducing number of features 
 * Regularization
     * keep all feature but reduce magnitude 
-    * 
+
 ## Gradient Descent 
 To estimate parameters of hypothesis function, we can use Gradient Descent. For two-dimensional case, points on the same contour on the contour map will have same loss cost. Thus, finding the equation with smallest loss cost is the same as finding the minimum value on the contour map. 
 

@@ -1,4 +1,4 @@
-# Notes From Beginning(III)
+# Notes From Beginning(II)
 
 ## Classification 
 Classification is different from Regression such that it is not actually a linear function. It depends on small number of labeled discrete values. 
