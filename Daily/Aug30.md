@@ -39,3 +39,44 @@ grouping these neurons together and form more complex logic gates
 ##### Multiclass classification 
 having a vector(rather than a number) as output 
 and output for object A should be [0, 0, 0, 1] rather than [1, 2, 3, 4]
+
+
+### Learning 
+#### Cost Function 
+{training set (x^m, y^m)}
+L: total number of layers
+s_l: number of units in layer l
+
+Binary classification: one output 0 or 1
+Multi class classification: K classes where y \in \R^K
+
+The cost function will be a generalized version of logistic regression
+**by adding K component together** 
+
+#### Back Propagation Algorithm 
+\delta_j^l error of node j in layer l
+\Delta_{ij}^l compute partial derivative of equation [1]
+ 
+goal: minimize the cost function J
+
+in a four-layered neural network
+Forward propagation: 
+a^1 = x 
+z^2 = \Theta^1 a^1
+a^2 = g(z^2)
+z^3 = \Theta^2 a^2
+...
+
+Then back propagate: 
+l = 4
+\delta^4 = a^4_j - y_j
+\delta^3 = (\Theta^3)^T\delta^4 .* g'(z^3)
+
+**dJ/d\Theta_{ij}^l = a_j^l \delta_i^{l+1}** [1]
+
+##### in Practice  
+###### Unrolling parameters 
+vector = [Theta1, Theta2, Theta3]
+call reshape(vector(#range), size, size)
+
+##### Gradient Checking 
