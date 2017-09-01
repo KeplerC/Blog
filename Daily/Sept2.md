@@ -34,6 +34,6 @@ speed up, reduce memory
 ##### Data Visualization 
 the axis usually be meaningless 
 
-#### algorithm 
+#### algorithm formulation 
 finding a low dimensional structure that has smallest distance 
 it is not linear regression 
