@@ -33,4 +33,35 @@ we choose feature that make usually large/small value in event of anomaly
 
 ### Recommender System
 
-#### Content based 
+#### Content-based Recommender system
+use a vector to describe the degree of class(like romance, action)
+we can treat every user as a linear regression problem 
+to learn all users(all thetas)
+just add a summation to all linear regressions 
+
+#### Collaborative Filtering 
+feature learning: 
+when we have a series of theta for every users, we can infer the features (which are how romantic a movie is)
+
+##### algorithm 
+instead of switching between estimating x and estimating theta, we optimize a general equation such that 
+
+J(x, theta) = 1/2 * sum(theta*x - y)^2 + regulation term of theta + regulation term of x 
+
+1. initialize x and theta to small random values 
+2. minimize using gradient descent 
+
+#### low rank matrix factorization 
+we can have a matrix that contain all the predictive rating for users/movies 
+and we compute it as 
+X * Theta'
+>In mathematics, low-rank approximation is a minimization problem, in which the cost function measures the fit between a given matrix (the data) and an approximating matrix (the optimization variable), subject to a constraint that the approximating matrix has reduced rank. 
+
+##### finding movies j related to i 
+we use Euclidean distance 
+
+##### Implementation Details 
+If we do predictive matrix and collaborative filtering directly, for a new user without any information will minimize J by setting every parameter to 0.
+
+To solve this problem, we use mean normalization. 
+we subtract average rating of every matrix and learn theta and x through this new matrix. 
