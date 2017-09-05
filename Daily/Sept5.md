@@ -118,7 +118,9 @@ population           -0.024650
 longitude            -0.045967
 latitude             -0.144160
 
-### Data Cleaning 
+### Data Cleaning
+
+#### Missing features 
 **Machine learning algorithm cannot work with missing features**
 
 to solve this problem, the book offers three ways of doing this: 
@@ -136,4 +138,58 @@ or use sklearn
 ```python
 from sklearn.preprocessing import Imputer
 imputer = Imputer(strategy="median")
+```
+
+#### text and categorical attributes 
+We preprocess the other label, ocean_proximity by labelling it.
+we can use pipeline for it by 
+
+```python
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import StandardScaler
+from sklearn.pipeline import FeatureUnion
+
+num_attribs = list(housing_num)
+cat_attribs = ["ocean_proximity"]
+
+num_pipeline = Pipeline([
+('imputer', Imputer(strategy="median")),
+('attribs_adder', CombinedAttributesAdder()),
+('std_scaler', StandardScaler()),
+])
+
+cat_pipeline = Pipeline([
+('selector', DataFrameSelector(cat_attribs)),
+('label_binarizer', LabelBinarizer()),
+])
+
+full_pipeline = FeatureUnion(transformer_list=[
+("num_pipeline", num_pipeline),
+("cat_pipeline", cat_pipeline),
+])
+
+housing_num_tr = num_pipeline.fit_transform(housing_num)
+```
+
+>You framed the problem, you got the data and explored it, you sampled a training set and a test set, and you wrote transformation pipelines to clean up and prepare your data for Machine Learning algorithms automatically.
+
+We can self define transformers by initializing three major methods in a class 
+```python
+__init__
+fit()
+transform()
+```
+
+### Train model 
+It is very very easy to use libraries to do that. like 
+```python 
+from sklearn.linear_model import LinearRegression
+lin_reg = LinearRegression()
+lin_reg.fit(housing_prepared, housing_labels)
+
+#or 
+
+from sklearn.tree import DecisionTreeRegressor
+tree_reg = DecisionTreeRegressor()
+tree_reg.fit(housing_prepared, housing_labels)
 ```
