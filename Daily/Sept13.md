@@ -33,6 +33,7 @@ dnn_clf.fit(x=X_train, y=y_train, batch_size=50, steps=40000)
 dnn_clf.evaluate(X_test, y_test)
 ```
 
+##### Construction phase
 for low level plain tensorflow, I write everything on the notebook, here are a few things worthwhile to highlight: 
 * Shape
 ```python
@@ -41,7 +42,6 @@ X = tf.placeholder(tf.float32, shape=(None, n_inputs), name="X")
 y = tf.placeholder(tf.int64, shape=(None), name="y")
 ```
 we make 28*28 features(for every pixel) to every feature, and each feature is considered to be a #
-
 ```python 
 def neuron_layer(X, n_neurons, name, activation=None):
     with tf.name_scope(name): #give Tensorboad a better look
@@ -59,3 +59,32 @@ def neuron_layer(X, n_neurons, name, activation=None):
 
 then the dnn is obvious 
 ```python 
+hidden1 = neuron_layer(X, n_hidden1, "hidden1", activation="relu")hidden2 = neuron_layer(hidden1, n_hidden2, "hidden2", activation="relu")
+logits = neuron_layer(hidden2, n_outputs, "outputs")
+```
+
+The tensorflow has its own way of doing this 
+```python 
+from tensorflow.contrib.layers import fully_connected
+
+hidden1 = fully_connected(X, n_hidden1, scope="hidden1")
+hidden2 = fully_connected(hidden1, n_hidden2, scope="hidden2")
+logits = fully_connected(hidden2, n_outputs, scope="outputs", activation_fn=None)
+```
+
+loss function is defined as 
+```python 
+xentropy = tf.nn.sparse_softmax_cross_entropy_with_logits(labels=y, logits=logits)
+loss = tf.reduce_mean(xentropy, name="loss")
+```
+and thus we optimize loss function by 
+```python 
+optimizer = tf.train.GradientDescentOptimizer(learning_rate)training_op = optimizer.minimize(loss)
+```
+
+##### Execution Phase
+```python 
+for iteration in range(mnist.train.num_examples // batch_size):
+    X_batch, y_batch = mnist.train.next_batch(batch_size)
+    sess.run(training_op, feed_dict={X: X_batch, y: y_batch})
+```
