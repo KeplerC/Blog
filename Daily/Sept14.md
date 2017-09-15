@@ -26,6 +26,25 @@ ReLU has a problem: dead ReLU that always output 0
 so use a leaky RELU or ELU(exponential linear unit) activation function 
 
 #### Batch normalization 
-To guarantee vanishing/exploding gradient do not come back, we have batch normalization 
+To guarantee vanishing/exploding gradient do not come back, we have batch normalization. We can do BN by adding an operation in the model just before the activation function of each layer, simply zero-centering and normalizing the inputs, then scaling and shifting the result using two new parameters per layer
 
+This is to solve a problem that distribution of each layer's inputs change in training, and parameter will also change
 //I want to call it for today because I am having my history final paper
+
+We can call it by 
+```python 
+import tensorflow as tf
+from tensorflow.contrib.layers import batch_norm
+n_inputs = 28 * 28
+n_hidden1 = 300
+n_hidden2 = 100
+n_outputs = 10
+X = tf.placeholder(tf.float32, shape=(None, n_inputs), name="X")
+is_training = tf.placeholder(tf.bool, shape=(), name='is_training')
+bn_params = {
+    'is_training': is_training,
+    'decay': 0.99,
+    'updates_collections': None
+}
+hidden1 = fully_connected(X, n_hidden1, scope="hidden1", normalizer_fn=batch_norm, normalizer_params=bn_params)
+```

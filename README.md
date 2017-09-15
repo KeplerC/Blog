@@ -11,3 +11,4 @@ A list of my works:
 | 2             | A study of Backpropagation Algorithm  | Aug 25     |
 | 3             | Machine Learning x Intrusion Detection| Aug 26，27 |
 | 4             | Notes From Beginning Series | Aug 28-Sept 4|
+| 5             | TensorFlow and SKlearn    | Sept4 - Sept15|
