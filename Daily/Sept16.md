@@ -1,0 +1,13 @@
+# Deep Learning 
+## Week 1: 
+Rectified linear unit: RELU 
+from a set of input parameters, going through RELUs(neurons) then we get an output y
+
+applications in supervised learning: from an input to an output 
+* standard nn: real estate, online ad
+* CNN: photo tagging, autonomous driving 
+* speech recognition, machine translation: rnn
+
+structured data: features are labelled 
+
+detailed implementation see ipy notes
