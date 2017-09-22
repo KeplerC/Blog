@@ -12,3 +12,5 @@ A list of my works:
 | 3             | Machine Learning x Intrusion Detection| Aug 26，27 |
 | 4             | Notes From Beginning Series | Aug 28-Sept 4|
 | 5             | TensorFlow and SKlearn    | Sept4 - Sept15|
+|6| coursera: neural network and deep learning | Sept 16 -21|
+|7| coursera: structuring machine learning projects | sept 17- 19|
