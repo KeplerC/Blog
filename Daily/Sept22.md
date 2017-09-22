@@ -28,6 +28,8 @@ outputs = tf.transpose(tf.stack(output_seqs), perm=[1, 0, 2]) # turn it back
 [ ] -> [ ]
  |  <-  |
  X      X
+ t1 ->  t2
+
 #### Dynamic unrolling 
 ```python 
 outputs, states = tf.nn.dynamic_rnn(basic_cell, X, dtype=tf.float32)
@@ -36,3 +38,13 @@ instead of having a specific n_steps, we have a while loop to go through enought
 
 ### Training 
 We simply unroll it through time and use regular backpropagation 
+
+
+## LSTM Cell 
+"don't look inside the box": it just a regular cell 
+>it first goes through a
+forget gate, dropping some memories, and then it adds some new memories via the addition operation (which adds the memories that were selected by an input gate). The result c(t) is sent straight out, without any further transformation.
+>after the addition operation, the long-term state is copied and passed through the tanh function, and then the result is filtered by the output gate.
+
+#### NLP
+**word embeddings**
