@@ -33,3 +33,5 @@ it does not have weights: it just do max or mean
 ##### Requirement: High memory usage
 
 ### Architecture 
+>Typical CNN architectures stack a few convolutional layers (each one generally followed by a ReLU layer), then a pooling layer, then another few convolutional layers (+ReLU), then another pooling layer, and so on
+
