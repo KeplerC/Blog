@@ -15,3 +15,7 @@ A list of my works:
 |6| coursera: neural network and deep learning | Sept 16 -21|
 |7| coursera: structuring machine learning projects | sept 17- 19|
 |8|TensorFlow and SKlearn    | Sept22 - Sept25|
+
+//I am too lazy to update this table every time, 
+for all the latest update, see /daily
+otherwise, please go to my [blog](keplerc98.github.io)
