@@ -18,4 +18,4 @@ A list of my works:
 
 //I am too lazy to update this table every time, 
 for all the latest update, see /daily
-otherwise, please go to my [blog](keplerc98.github.io)
+otherwise, please go to my [blog](https://keplerc98.github.io)
