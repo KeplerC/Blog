@@ -4,4 +4,4 @@ I will update what I read, what I think and this will be what I write. Because I
 for all the latest update, see /daily
 otherwise, please go to my [blog](https://keplerc.github.io)
 or my personal webpage 
-[kychen.xyz](https://kychen.xyz)
+[kychen.xyz](keplerc.github.io)
